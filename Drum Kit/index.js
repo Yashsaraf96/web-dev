@@ -6,6 +6,18 @@ for (var i=0; i<drumButtons.length; i++){
 
 function handleClick() {
   var buttonName = this.getInnerHTML();
+  playAudio(buttonName);
+}
+
+document.addEventListener("keydown", handleKeyboardPress);
+
+function handleKeyboardPress(e) {
+  console.log(e);
+  var buttonName = e.key;
+  playAudio(buttonName);
+}
+
+function playAudio(buttonName) {
   var audioPath = "sounds/";
   switch (buttonName) {
     case "w":
