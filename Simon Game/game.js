@@ -51,9 +51,9 @@ function checkAnswer(userLastClickIndex){
     }
   }else {
     playSound("wrong");
-    $("body").addClass("wrong");
+    $("body").addClass("game-over");
     setTimeout(function(){
-      $("body").removeClass("wrong");
+      $("body").removeClass("game-over");
     },200);
     $("h1").text("Game Over! Press any key to restart");
     startOver();
