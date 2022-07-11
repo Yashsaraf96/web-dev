@@ -56,5 +56,12 @@ function checkAnswer(userLastClickIndex){
       $("body").removeClass("wrong");
     },200);
     $("h1").text("Game Over! Press any key to restart");
+    startOver();
   }
+}
+
+function startOver(){
+  level = 0;
+  userPattern = [];
+  gamePattern = [];
 }
