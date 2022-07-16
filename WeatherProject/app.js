@@ -13,12 +13,11 @@ app.post("/", function(req, res){
   const cityName = req.body.city;
   const apiKey = "a4a407d9dd4f6153b529fe7c65a2322a";
   const units = "metric";
-  // This API currently only supports US city names.
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=" + units;
   https.get(url, function(response){
     console.log(response.statusCode);
     if (response.statusCode != 200) {
-      res.send("Please Enter a US city name.");
+      res.send("Please enter a valid city name.");
     }else{
       response.on("data", function(data){
         const weatherData = JSON.parse(data);
